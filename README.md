@@ -190,11 +190,10 @@ type X = Merge<
         [x: number]: { e: boolean };
         f: null;
     }
->;
-/*{
+>; /* {
     a: string;
     b: { c: Array<{ d?: string; d2: boolean }>; c2: number };
     [x: number]: { e: boolean };
     f: null;
-}* /
+} */
 ```
