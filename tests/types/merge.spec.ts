@@ -323,3 +323,31 @@ test('Merge<T1, T2>', () => {
         }
     >(true);
 });
+
+test('Merge<T1, T2> - nested', () => {
+    type T1 = { value: T1 };
+    type T2 = { default?: T1 };
+
+    type T3 = Merge<
+        T1,
+        {
+            value: T3;
+        }
+    >;
+
+    type T4 = Merge<
+        T2,
+        {
+            default?: T3;
+        }
+    >;
+
+    exact<
+        T4,
+        {
+            default?: {
+                value: T1;
+            };
+        }
+    >(true);
+});
