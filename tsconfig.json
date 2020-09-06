@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ES6",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "strictNullChecks": false
+    }
+}
