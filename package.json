@@ -1,0 +1,28 @@
+{
+    "name": "ts-type-utils",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test:common": "jest --clearCache && jest --config=./tests/jest.common.config.js",
+        "test:strict-null": "jest --clearCache && jest --config=./tests/jest.strict-null.config.js",
+        "test": "npm run test:common && npm run test:strict-null"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IIIristraM/ts-type-utils.git"
+    },
+    "author": "iiiristram",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/IIIristraM/ts-type-utils/issues"
+    },
+    "homepage": "https://github.com/IIIristraM/ts-type-utils#readme",
+    "devDependencies": {
+        "@types/jest": "^26.0.10",
+        "jest": "^26.4.2",
+        "prettier": "^2.1.1",
+        "ts-jest": "^26.3.0",
+        "typescript": "^4.0.2"
+    }
+}
