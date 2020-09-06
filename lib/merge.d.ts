@@ -18,15 +18,15 @@ export type Merge<T1, T2> = {
                             ? T2K
                             : false extends IsObject<U> | IsObject<W>
                             ? T2K
-                            : Exact<W, Merge<T1, T2>> extends true // type A = Assign<B, {prop: A[]}>
-                            ? Array<W>
-                            : Array<Merge<U, W>> // merge items
+                            : // : Exact<W, Merge<T1, T2>> extends true // type A = Assign<B, {prop: A[]}>
+                              // ? Array<W>
+                              Array<Merge<U, W>> // merge items
                         : T2K
                     : false extends IsObject<T1K> | IsObject<T2K>
                     ? T2K
-                    : Exact<T2K, Merge<T1, T2>> extends true // type A = Assign<B, {prop: A}>
-                    ? T2K
-                    : Merge<T1K, T2K> // merge objects
+                    : // : Exact<T2K, Merge<T1, T2>> extends true // type A = Assign<B, {prop: A}>
+                      // ? T2K
+                      Merge<T1K, T2K> // merge objects
                 : never
             : never
         : T2[K];
