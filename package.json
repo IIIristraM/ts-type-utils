@@ -2,11 +2,12 @@
     "name": "ts-type-utils",
     "version": "0.0.0",
     "description": "",
-    "main": "index.js",
+    "types": "lib/index.d.ts",
     "scripts": {
         "test:common": "jest --clearCache && jest --config=./tests/jest.common.config.js",
         "test:strict-null": "jest --clearCache && jest --config=./tests/jest.strict-null.config.js",
-        "test": "npm run test:common && npm run test:strict-null"
+        "test": "npm run test:common && npm run test:strict-null",
+        "release": "npm run test && npm publish"
     },
     "repository": {
         "type": "git",
