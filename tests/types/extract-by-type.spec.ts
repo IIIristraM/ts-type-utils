@@ -168,4 +168,39 @@ test('ExtractByType<T, S>', () => {
             a: Indexed<number>;
         }
     >(true);
+
+    class Test {
+        a: number;
+        b: Function;
+        c() {}
+        static d: string;
+    }
+
+    exact<
+        ExtractByType<Test, number>,
+        {
+            a: number;
+        }
+    >(true);
+
+    exact<
+        ExtractByType<Test, Function>,
+        {
+            b: Function;
+        }
+    >(true);
+
+    exact<
+        ExtractByType<Test, (...args: any[]) => any>,
+        {
+            c: () => void;
+        }
+    >(true);
+
+    exact<
+        ExtractByType<typeof Test, string>,
+        {
+            d: string;
+        }
+    >(true);
 });
