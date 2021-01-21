@@ -3,14 +3,12 @@
     "version": "0.0.1",
     "description": "",
     "types": "lib/index.d.ts",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "scripts": {
         "test:common": "jest --clearCache && jest --config=./tests/jest.common.config.js",
         "test:strict-null": "jest --clearCache && jest --config=./tests/jest.strict-null.config.js",
         "test": "npm run test:common && npm run test:strict-null",
-        "release": "npm run test && npm publish"
+        "release:internal": "npm run test && npm publish --registry https://npm.pkg.github.com",
+        "release": "npm run test && npm publish --access public --registry https://registry.npmjs.org/"
     },
     "repository": {
         "type": "git",
