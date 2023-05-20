@@ -1,7 +1,11 @@
-export type KnownKeys<T> = {
-    [K in keyof T]: string extends K ? never : number extends K ? never : K;
-} extends { [_ in keyof T]: infer U }
-    ? U
-    : never;
+import { NonObj } from './is-object';
 
-export type PickKnown<T> = Pick<T, Extract<KnownKeys<T>, keyof T>>;
+export type KnownKeys<T> = keyof PickKnown<T>;
+
+export type PickKnown<T> = [T] extends [never]
+    ? {}
+    : T extends NonObj
+    ? {}
+    : {
+          [K in keyof T as string extends K ? never : number extends K ? never : K]: T[K];
+      };
