@@ -20,11 +20,11 @@ test('KnownKeys<T>', () => {
         'x' | 'y'
     >(true);
 
-    exact<KnownKeys<undefined>, unknown>(true);
-    exact<KnownKeys<null>, unknown>(true);
-    exact<KnownKeys<never>, unknown>(true);
-    exact<KnownKeys<{}>, unknown>(true);
-    exact<KnownKeys<number>, unknown>(true);
+    exact<KnownKeys<undefined>, never>(true);
+    exact<KnownKeys<null>, never>(true);
+    exact<KnownKeys<never>, never>(true);
+    exact<KnownKeys<{}>, never>(true);
+    exact<KnownKeys<number>, never>(true);
     exact<KnownKeys<any>, never>(true);
 });
 

@@ -98,7 +98,6 @@ test('Exact<T>', () => {
 
     exact<(a: number, b: string) => any, (a: number, b: string) => number>(false);
 
-    // TODO should be false
-    exact<(a: number, b: number) => any, (a: number, b: string) => any>(true);
+    exact<(a: number, b: number) => any, (a: number, b: string) => any>(false);
     exact<(a: number, b?: string) => any, (a: number, b: string) => any>(true);
 });
